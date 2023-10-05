@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     private float _playerSpeed = 5f;
 
     [SerializeField]
-    private float _playerPoints = 0f;
+    private int _lives = 3;
+
     
 
     void Start()
@@ -23,19 +24,37 @@ public class Player : MonoBehaviour
 
         transform.Translate(new Vector3(1, 0, 0) * _playerSpeed * horizontalInput * Time.deltaTime);
 
-        if (transform.position.x >= 2.05f)
+        if (transform.position.x >= 2.75f)
         {
-            transform.position = new Vector3(2.05f, transform.position.y, 0);
+            transform.position = new Vector3(2.75f, transform.position.y, 0);
         }
-        else if (transform.position.x <= -2.05)
+        else if (transform.position.x <= -2.75)
         {
-            transform.position = new Vector3(-2.05f, transform.position.y, 0);
-        }
-
-        public void Points()
-        {
-
+            transform.position = new Vector3(-2.75f, transform.position.y, 0);
         }
 
+        float verticalInput = Input.GetAxis("Vertical");
+
+        transform.Translate(new Vector3(0, 1, 0) * _playerSpeed * verticalInput * Time.deltaTime);
+
+        if(transform.position.y >= 0.8f)
+        {
+            transform.position = new Vector3(transform.position.x, 0.8f, 0);
+        }
+        else if (transform.position.y <= -0.35f)
+        {
+            transform.position = new Vector3(transform.position.x, -0.35f, 0);
+        }
+
+    }
+    public void Damage()
+    {
+        _lives -= 1;
+
+        if(_lives < 1)
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 }

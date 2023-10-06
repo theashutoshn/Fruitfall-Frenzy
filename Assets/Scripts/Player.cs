@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int _lives = 3;
 
+    [SerializeField]
+    private UIManager _uiManager;
     
 
     void Start()
     {
-        
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -51,10 +53,14 @@ public class Player : MonoBehaviour
     {
         _lives -= 1;
 
+        _uiManager.UpdateLives(_lives);
         if(_lives < 1)
         {
+            
             Destroy(this.gameObject);
         }
         
     }
+
+    
 }

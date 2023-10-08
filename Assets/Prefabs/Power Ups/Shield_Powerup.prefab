@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _powerUpSpeed: 2
+  _powerUpID: 0
+  _powerUpClip: {fileID: 8300000, guid: 20c931c479ec87d488b5aa3b132f46fb, type: 3}
 --- !u!61 &2495065242669613221
 BoxCollider2D:
   m_ObjectHideFlags: 0

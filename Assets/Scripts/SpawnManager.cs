@@ -68,6 +68,6 @@ public class SpawnManager : MonoBehaviour
     {
         Vector3 posToSpeedSpawn = new Vector3(Random.Range(-2.85f, 2.85f), 3f, 0);
         Instantiate(_speedPrefab, posToSpeedSpawn, Quaternion.identity);
-        yield return new WaitForSeconds(Random.Range(4f, 12f));
+        yield return new WaitForSeconds(Random.Range(3f, 10f));
     }
 }

@@ -22,6 +22,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool _isShieldActive = false;
 
+    //[SerializeField]
+    //private GameObject _level_01;
+
+    //[SerializeField]
+    //private GameObject _level_02;
+
+
+
     void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -81,6 +89,15 @@ public class Player : MonoBehaviour
     {
         _score += points;
         _uiManager.UpdateScore(_score);
+
+        // Background Change
+        //if (_score >= 100)
+        //{
+        //    _level_01.SetActive(false);
+        //    _level_02.SetActive(true);
+        //}
+
+
     }
 
     public void ShieldActive()

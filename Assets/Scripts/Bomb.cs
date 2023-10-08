@@ -7,7 +7,7 @@ public class Bomb : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField]
-    private float _bombSpeed = 5f;
+    private float _bombSpeed = 2f;
 
     void Start()
     {

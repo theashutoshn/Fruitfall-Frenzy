@@ -12,12 +12,18 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _bombPrefab;
 
-    
+    [SerializeField]
+    private GameObject _shieldPrefab;
+
+    [SerializeField]
+    private GameObject _speedPrefab;
 
     void Start()
     {
         StartCoroutine(FruitSpawner());
         StartCoroutine(BombSpawner());
+        StartCoroutine(ShieldSpawner());
+        StartCoroutine(SpeedSpawner());
     }
 
     // Update is called once per frame
@@ -43,9 +49,25 @@ public class SpawnManager : MonoBehaviour
         {
             Vector3 posToBombSpawn = new Vector3(Random.Range(-2.9f, 2.9f), 3f, 0);
             Instantiate(_bombPrefab, posToBombSpawn, Quaternion.identity);
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(8f);
         }
     }
-
     
+    IEnumerator ShieldSpawner()
+    {
+        while (true)
+        {
+            Vector3 posToShieldSpawn = new Vector3(Random.Range(-2.85f, 2.85f), 3f, 0);
+            Instantiate(_shieldPrefab, posToShieldSpawn, Quaternion.identity);
+            yield return new WaitForSeconds(Random.Range(3f, 10f));
+        }
+        
+    }
+    
+    IEnumerator SpeedSpawner()
+    {
+        Vector3 posToSpeedSpawn = new Vector3(Random.Range(-2.85f, 2.85f), 3f, 0);
+        Instantiate(_speedPrefab, posToSpeedSpawn, Quaternion.identity);
+        yield return new WaitForSeconds(Random.Range(4f, 12f));
+    }
 }

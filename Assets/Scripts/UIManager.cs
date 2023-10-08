@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private TextMeshProUGUI _liveScore;
+    private TextMeshProUGUI _scoreText;
     
     [SerializeField]
     private Image _livesImg;
@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        
+        _scoreText.text = "Score: " + 0;
     }
 
     // Update is called once per frame
@@ -30,5 +30,10 @@ public class UIManager : MonoBehaviour
     public void UpdateLives(int currentLives)
     {
         _livesImg.sprite = _basketLives[currentLives];
+    }
+
+    public void UpdateScore(int playerScore)
+    {
+        _scoreText.text = "Score: " + playerScore.ToString();
     }
 }

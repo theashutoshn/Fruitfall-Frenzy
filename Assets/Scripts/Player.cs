@@ -5,14 +5,22 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float _playerSpeed = 5f;
+    private float _playerSpeed = 3f;
 
     [SerializeField]
     private int _lives = 3;
 
-    [SerializeField]
-    private UIManager _uiManager;
     
+    private UIManager _uiManager;
+
+    [SerializeField]
+    private int _score;
+
+    [SerializeField]
+    private GameObject _shieldVisual;
+
+    [SerializeField]
+    private bool _isShieldActive = false;
 
     void Start()
     {
@@ -51,6 +59,13 @@ public class Player : MonoBehaviour
     }
     public void Damage()
     {
+        if (_isShieldActive == true)
+        {
+            _isShieldActive = false;
+            _shieldVisual.SetActive(false);
+            return;
+        }
+
         _lives -= 1;
 
         _uiManager.UpdateLives(_lives);
@@ -62,5 +77,33 @@ public class Player : MonoBehaviour
         
     }
 
+    public void AddScore(int points)
+    {
+        _score += points;
+        _uiManager.UpdateScore(_score);
+    }
+
+    public void ShieldActive()
+    {
+        _isShieldActive = true;
+        _shieldVisual.SetActive(true);
+        StartCoroutine(ShieldOffRoutine());
+    }
+    IEnumerator ShieldOffRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+        _shieldVisual.SetActive(false);
+    }
+    public void SpeedBoost()
+    {
+        _playerSpeed = 8f;
+        StartCoroutine(SpeedReturnROutine());
+    }
+    IEnumerator SpeedReturnROutine()
+    {
+        yield return new WaitForSeconds(3f);
+        _playerSpeed = 3f;
+    }
     
+
 }

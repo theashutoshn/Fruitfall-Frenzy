@@ -9,8 +9,17 @@ public class Fruits : MonoBehaviour
     private float _fruitSpeed = 2f;
 
 
+    private Player _player;
+
+    
+
+
     void Start()
     {
+
+        
+        
+
         transform.position = new Vector3(Random.Range(-2.80f, 2.80f), 3f, 0);
     }
 
@@ -33,6 +42,12 @@ public class Fruits : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+
+            Player _player = other.gameObject.GetComponent<Player>();
+            if (_player != null)  // Just to be safe
+            {
+                _player.AddScore(10);
+            }
             Destroy(this.gameObject);
         }
     }

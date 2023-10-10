@@ -8,6 +8,8 @@ public class Fruits : MonoBehaviour
     [SerializeField]
     private float _fruitSpeed = 2f;
 
+    [SerializeField]
+    private int _fruitID;
 
     private Player _player;
 
@@ -46,7 +48,25 @@ public class Fruits : MonoBehaviour
             Player _player = other.gameObject.GetComponent<Player>();
             if (_player != null)  // Just to be safe
             {
-                _player.AddScore(10);
+                switch (_fruitID)
+                {
+                    case 0:
+                        _player.AddScore(10);
+                        break;
+                    
+                    case 1:
+                        _player.AddScore(20);
+                        break;
+
+                    case 2:
+                        _player.AddScore(30);
+                        break;
+
+                    default:
+                        Debug.Log("Defalut");
+                        break;
+                }
+                
             }
             Destroy(this.gameObject);
         }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2612352533427023902}
   - component: {fileID: 857977821782052326}
+  - component: {fileID: -2701537939227813468}
   - component: {fileID: -4943847855694751095}
   - component: {fileID: 6943438321513949832}
-  - component: {fileID: -8156373894271530363}
   m_Layer: 0
   m_Name: Grape
   m_TagString: Untagged
@@ -87,6 +87,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2701537939227813468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7378120321126413837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e5d7e65bfe54746942b2d0f4412ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fruitSpeed: 2
+  _fruitID: 1
 --- !u!61 &-4943847855694751095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,16 +173,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8156373894271530363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7378120321126413837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27e5d7e65bfe54746942b2d0f4412ac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fruitSpeed: 2

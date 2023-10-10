@@ -51,18 +51,18 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(-2.75f, transform.position.y, 0);
         }
 
-        float verticalInput = Input.GetAxis("Vertical");
+        //float verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(0, 1, 0) * _playerSpeed * verticalInput * Time.deltaTime);
+        //transform.Translate(new Vector3(0, 1, 0) * _playerSpeed * verticalInput * Time.deltaTime);
 
-        if(transform.position.y >= 0.8f)
-        {
-            transform.position = new Vector3(transform.position.x, 0.8f, 0);
-        }
-        else if (transform.position.y <= -0.35f)
-        {
-            transform.position = new Vector3(transform.position.x, -0.35f, 0);
-        }
+        //if(transform.position.y >= 0.8f)
+        //{
+        //    transform.position = new Vector3(transform.position.x, 0.8f, 0);
+        //}
+        //else if (transform.position.y <= -0.35f)
+        //{
+        //    transform.position = new Vector3(transform.position.x, -0.35f, 0);
+        //}
 
     }
     public void Damage()

@@ -18,6 +18,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject _speedPrefab;
 
+    private bool _stopSpawning = false;
+
     void Start()
     {
         StartCoroutine(FruitSpawner());
@@ -34,7 +36,7 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator FruitSpawner()
     {
-        while (true)
+        while (_stopSpawning == false)
         {
             Vector3 posToSpawn = new Vector3(Random.Range(-2.8f, 2.8f), 3f, 0);
             Instantiate(_fruitPrefab[Random.Range(0,3)], posToSpawn, Quaternion.identity);
@@ -45,7 +47,7 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator BombSpawner()
     {
-        while (true)
+        while (_stopSpawning == false)
         {
             Vector3 posToBombSpawn = new Vector3(Random.Range(-2.9f, 2.9f), 3f, 0);
             Instantiate(_bombPrefab, posToBombSpawn, Quaternion.identity);
@@ -55,7 +57,7 @@ public class SpawnManager : MonoBehaviour
     
     IEnumerator ShieldSpawner()
     {
-        while (true)
+        while (_stopSpawning == false)
         {
             Vector3 posToShieldSpawn = new Vector3(Random.Range(-2.85f, 2.85f), 3f, 0);
             Instantiate(_shieldPrefab, posToShieldSpawn, Quaternion.identity);
@@ -66,8 +68,23 @@ public class SpawnManager : MonoBehaviour
     
     IEnumerator SpeedSpawner()
     {
-        Vector3 posToSpeedSpawn = new Vector3(Random.Range(-2.85f, 2.85f), 3f, 0);
-        Instantiate(_speedPrefab, posToSpeedSpawn, Quaternion.identity);
-        yield return new WaitForSeconds(Random.Range(3f, 10f));
+        while (_stopSpawning == false)
+        {
+            Vector3 posToSpeedSpawn = new Vector3(Random.Range(-2.85f, 2.85f), 3f, 0);
+            Instantiate(_speedPrefab, posToSpeedSpawn, Quaternion.identity);
+            yield return new WaitForSeconds(Random.Range(3f, 10f));
+        }
+        
     }
+
+    public void OnPlayerDeath()
+    {
+        //Debug.Log("Player is Dead");
+        _stopSpawning = true;
+        //StopCoroutine(FruitSpawner());
+        //StopCoroutine(BombSpawner());
+        //StopCoroutine(ShieldSpawner());
+        //StopCoroutine(SpeedSpawner());
+    }
+
 }

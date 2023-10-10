@@ -28,11 +28,20 @@ public class Player : MonoBehaviour
     //[SerializeField]
     //private GameObject _level_02;
 
-
+    private SpawnManager _spawnManager;
+    
 
     void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+
+        _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
+        if (_spawnManager == null)
+        {
+            Debug.LogError("The Spawn Manager is NULL");
+        }
+
+        
     }
 
     // Update is called once per frame
@@ -77,10 +86,13 @@ public class Player : MonoBehaviour
         _lives -= 1;
 
         _uiManager.UpdateLives(_lives);
+
+
         if(_lives < 1)
         {
-            
+            _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
+            
         }
         
     }

@@ -19,23 +19,14 @@ public class Fruits : MonoBehaviour
     void Start()
     {
 
-        
-        
-
         transform.position = new Vector3(Random.Range(-2.80f, 2.80f), 3f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * _fruitSpeed * Time.deltaTime);
-
-
-        if (transform.position.y < -1.5f)
-        {
-            transform.position = new Vector3(Random.Range(-2.80f, 2.80f), 3f, 0);
-        }
-
+        
+        fruitMoveDown();
 
         
     }
@@ -72,6 +63,18 @@ public class Fruits : MonoBehaviour
         }
     }
 
+    public void fruitMoveDown()
+    {
+        transform.Translate(Vector3.down * _fruitSpeed * Time.deltaTime);
+
+
+        if (transform.position.y < -1.5f)
+        {
+            transform.position = new Vector3(Random.Range(-2.80f, 2.80f), 3f, 0);
+        }
+    }
+
+   
 
 
 }

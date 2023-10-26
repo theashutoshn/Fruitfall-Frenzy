@@ -81,10 +81,8 @@ public class SpawnManager : MonoBehaviour
     {
         //Debug.Log("Player is Dead");
         _stopSpawning = true;
-        //StopCoroutine(FruitSpawner());
-        //StopCoroutine(BombSpawner());
-        //StopCoroutine(ShieldSpawner());
-        //StopCoroutine(SpeedSpawner());
+        
+      
     }
 
 }

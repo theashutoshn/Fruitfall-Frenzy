@@ -66,4 +66,6 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
     }
+
+    
 }

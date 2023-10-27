@@ -70,7 +70,7 @@ public class Fruits : MonoBehaviour
 
         if (transform.position.y < -1.5f)
         {
-            transform.position = new Vector3(Random.Range(-2.80f, 2.80f), 3f, 0);
+            Destroy(this.gameObject);
         }
     }
 

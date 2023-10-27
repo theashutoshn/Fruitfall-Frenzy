@@ -23,9 +23,12 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(FruitSpawner());
-        StartCoroutine(BombSpawner());
-        StartCoroutine(ShieldSpawner());
+        
         StartCoroutine(SpeedSpawner());
+
+        Invoke("DelayBomb", 5f);
+        Invoke("DelayShield", 10f);
+
     }
 
     // Update is called once per frame
@@ -34,13 +37,23 @@ public class SpawnManager : MonoBehaviour
         
     }
 
+    public void DelayShield()
+    {
+        StartCoroutine(ShieldSpawner());
+    }
+    
+    public void DelayBomb()
+    {
+        StartCoroutine(BombSpawner());
+    }
+    
     IEnumerator FruitSpawner()
     {
         while (_stopSpawning == false)
         {
             Vector3 posToSpawn = new Vector3(Random.Range(-2.8f, 2.8f), 3f, 0);
             Instantiate(_fruitPrefab[Random.Range(0,3)], posToSpawn, Quaternion.identity);
-            yield return new WaitForSeconds(1f); // this waitforseconds means that once the fruit is droped, it will wait for few seconds to respawn new fruits 
+            yield return new WaitForSeconds(0.5f); // this waitforseconds means that once the fruit is droped, it will wait for few seconds to respawn new fruits 
         }
          
     }
@@ -51,7 +64,8 @@ public class SpawnManager : MonoBehaviour
         {
             Vector3 posToBombSpawn = new Vector3(Random.Range(-2.9f, 2.9f), 3f, 0);
             Instantiate(_bombPrefab, posToBombSpawn, Quaternion.identity);
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(5f);
+            
         }
     }
     
@@ -61,7 +75,7 @@ public class SpawnManager : MonoBehaviour
         {
             Vector3 posToShieldSpawn = new Vector3(Random.Range(-2.85f, 2.85f), 3f, 0);
             Instantiate(_shieldPrefab, posToShieldSpawn, Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(3f, 10f));
+            yield return new WaitForSeconds(Random.Range(10f, 15f));
         }
         
     }
@@ -80,9 +94,7 @@ public class SpawnManager : MonoBehaviour
     public void OnPlayerDeath()
     {
         //Debug.Log("Player is Dead");
-        _stopSpawning = true;
-        
-      
+        _stopSpawning = true;  
     }
 
 }

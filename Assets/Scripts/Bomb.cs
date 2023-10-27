@@ -17,12 +17,7 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * _bombSpeed * Time.deltaTime);
-
-        if(transform.position.y < -1)
-        {
-            transform.position = new Vector3(Random.Range(-2.19f, 2.91f), 3f, 0);
-        }
+        BombMoveDown();
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -37,6 +32,16 @@ public class Bomb : MonoBehaviour
             
             Destroy(this.gameObject);
 
+        }
+    }
+
+    public void BombMoveDown()
+    {
+        transform.Translate(Vector3.down * _bombSpeed * Time.deltaTime);
+
+        if (transform.position.y < -1)
+        {
+            transform.position = new Vector3(Random.Range(-2.19f, 2.91f), 3f, 0);
         }
     }
 }

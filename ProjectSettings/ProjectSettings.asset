@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: AshutoshNandanwar
   productName: Fruitfall Frenzy
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -101,7 +101,7 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 1
   allowFullscreenSwitch: 1
-  fullscreenMode: 1
+  fullscreenMode: 3
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -135,7 +135,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.1
+  bundleVersion: 1.0.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -156,7 +156,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.Fruitfall-Frenzy
+    Standalone: com.AshutoshNandanwar.Fruitfall-Frenzy
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -277,7 +277,56 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 78797abe53a2e79419846c564d535953, type: 3}
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 493aa1ea53c8cbd4d84899cccde4c56e, type: 3}
+      m_Width: 512
+      m_Height: 512
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: d1633f3db07a64b47a7a2c6a40a8c7f4, type: 3}
+      m_Width: 256
+      m_Height: 256
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 3d9e82f6e54f6884b95cbe65977c390d, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: fb0d7f22d2e08d74d9b717879ec18ec4, type: 3}
+      m_Width: 64
+      m_Height: 64
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 693dfe1b10ccaea4f95ee3e9d92a64b5, type: 3}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 8ecd995d30fe2c940a8b74928cf2d6fb, type: 3}
+      m_Width: 32
+      m_Height: 32
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: b6742920bb3ea4d4a9cd52958dec8df5, type: 3}
+      m_Width: 16
+      m_Height: 16
+      m_Kind: 0
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 78797abe53a2e79419846c564d535953, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -444,7 +493,8 @@ PlayerSettings:
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  m_TemplateCustomTags: {}
+  m_TemplateCustomTags:
+    PRODUCT_DESCRIPTION: 
   mobileMTRendering:
     Android: 1
     iPhone: 1
@@ -719,10 +769,10 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: APPLICATION:Default
+  webGLTemplate: APPLICATION:PWA
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 1
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0

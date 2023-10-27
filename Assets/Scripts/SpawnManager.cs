@@ -23,11 +23,10 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(FruitSpawner());
-        
-        StartCoroutine(SpeedSpawner());
 
         Invoke("DelayBomb", 5f);
         Invoke("DelayShield", 10f);
+        Invoke("DelaySpeed", 10f);
 
     }
 
@@ -45,6 +44,11 @@ public class SpawnManager : MonoBehaviour
     public void DelayBomb()
     {
         StartCoroutine(BombSpawner());
+    }
+
+    public void DelaySpeed()
+    {
+        StartCoroutine(SpeedSpawner());
     }
     
     IEnumerator FruitSpawner()

@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _pauseMenu;
 
-    [SerializeField]
-    private AudioClip _buttonClick;
+    
 
     void Start()
     {
@@ -54,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        
         _pauseMenu.gameObject.SetActive(false);
         Time.timeScale = 1f;
     }

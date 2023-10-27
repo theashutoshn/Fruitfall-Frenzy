@@ -13,6 +13,8 @@ public class Fruits : MonoBehaviour
 
     private Player _player;
 
+    [SerializeField]
+    private AudioClip _fruitCollectClip;
     
 
 
@@ -37,6 +39,7 @@ public class Fruits : MonoBehaviour
         {
 
             Player _player = other.gameObject.GetComponent<Player>();
+            AudioSource.PlayClipAtPoint(_fruitCollectClip, transform.position);
             if (_player != null)  // Just to be safe
             {
                 switch (_fruitID)

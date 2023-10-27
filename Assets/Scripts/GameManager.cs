@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _pauseMenu;
-    // Start is called before the first frame update
+
+    [SerializeField]
+    private AudioClip _buttonClick;
+
     void Start()
     {
         

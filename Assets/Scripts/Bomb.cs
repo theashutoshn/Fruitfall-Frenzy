@@ -9,6 +9,11 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private float _bombSpeed = 2f;
 
+    [SerializeField]
+    private AudioClip _bombClip;
+
+    
+
     void Start()
     {
         transform.position = new Vector3(Random.Range(-2.19f, 2.91f), 3f, 0);
@@ -25,6 +30,8 @@ public class Bomb : MonoBehaviour
         if(other.tag == "Player")
         {
             Player player = other.transform.GetComponent<Player>();
+            AudioSource.PlayClipAtPoint(_bombClip, transform.position);
+
             if(player != null)
             {
                 player.Damage();
@@ -44,4 +51,6 @@ public class Bomb : MonoBehaviour
             transform.position = new Vector3(Random.Range(-2.19f, 2.91f), 3f, 0);
         }
     }
+
+    
 }

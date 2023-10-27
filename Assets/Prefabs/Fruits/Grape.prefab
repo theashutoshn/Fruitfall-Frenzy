@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fruitSpeed: 2
   _fruitID: 1
+  _fruitCollectClip: {fileID: 8300000, guid: 0462eb2315a15d34aa3d2c0af3e48529, type: 3}
 --- !u!61 &-4943847855694751095
 BoxCollider2D:
   m_ObjectHideFlags: 0

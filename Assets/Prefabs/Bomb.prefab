@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bombSpeed: 2
+  _bombClip: {fileID: 8300000, guid: 4034170a7cd3a2e4abd35c5d705eccfc, type: 3}
+  movecamera: {fileID: 0}
 --- !u!58 &45627573897099119
 CircleCollider2D:
   m_ObjectHideFlags: 0
